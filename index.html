@@ -31,10 +31,10 @@
                         <p class="text-center">Area (A) = 0.5 X b X h</p>
                         <div class="flex gap-4 items-center justify-center">
                             <input type="text" name="" id="triangle-base" placeholder="b"
-                                class="bg-slate-200 rounded-md w-20 p-1">
+                                class="bg-slate-200 rounded-md w-16 p-1">
                             <span>cm</span>
                             <input type="text" name="" id="triangle-height" placeholder="h"
-                                class="bg-slate-200 rounded-md w-20 p-1">
+                                class="bg-slate-200 rounded-md w-16 p-1">
                             <span>cm</span>
                         </div>
                         <div>
@@ -51,7 +51,7 @@
 
                 <!-- rectangle card  -->
                 <div class="card bg-base-100  shadow-xl p-2">
-                    <figure>
+                    <figure class="mt-10">
                         <img src="images/rectangle.png" />
                     </figure>
                     <div class="card-body">
@@ -59,10 +59,10 @@
                         <p class="text-center">Area (A) = w X l</p>
                         <div class="flex justify-center items-center gap-4">
                             <input type="text" name="" id="rectangle-width" placeholder="w"
-                                class="bg-slate-200 w-20 rounded-md p-1">
+                                class="bg-slate-200 w-16 rounded-md p-1">
                             <span>cm</span>
                             <input type="text" name="" id="rectangle-length" placeholder="l"
-                                class="bg-slate-200 w-20 rounded-md p-1">
+                                class="bg-slate-200 w-16 rounded-md p-1">
                             <span>cm</span>
                         </div>
                         <div>
@@ -76,16 +76,28 @@
                 </div>
 
                 <!-- parallelogram card  -->
-                <div class="card bg-base-100  shadow-xl">
-                    <figure>
-                        <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                            alt="Shoes" />
+                <div class="card bg-base-100  shadow-xl p-2">
+                    <figure class="mt-14">
+                        <img src="images/parallelogram.png" alt="Shoes" />
                     </figure>
                     <div class="card-body">
-                        <h2 class="card-title">Shoes!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <div class="card-actions justify-end">
-                            <button class="btn btn-primary">Buy Now</button>
+                        <h2 class="text-center">Parallelogram</h2>
+                        <p class="text-center">Area (A) = b x h</p>
+                        <div class="flex gap-4 justify-center items-center">
+                            <input type="text" name="" id="parallelogram-base" placeholder="b"
+                                class="bg-slate-200 w-16 rounded-md p-1">
+                            <span>cm</span>
+                            <input type="text" name="" id="parallelogram-height" placeholder="h"
+                                class="bg-slate-200 w-16 rounded-md p-1">
+                            <span>cm</span>
+                        </div>
+
+                        <div>
+                            <p>Area: <span id="parallelogram-area"></span> <span>cm<sup>2</sup></span></p>
+                        </div>
+                        <div class="card-actions">
+                            <button onclick="calculateParallelogramArea()"
+                                class="btn bg-[#1090D8] w-full mt-2 text-white">Calculate</button>
                         </div>
                     </div>
                 </div>
@@ -106,31 +118,55 @@
                 </div>
 
                 <!-- pentagon card  -->
-                <div class="card bg-base-100  shadow-xl">
-                    <figure>
-                        <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                            alt="Shoes" />
+                <div class="card bg-base-100  shadow-xl p-2">
+                    <figure class="mt-14">
+                        <img src="images/pentagon.png" alt="Pentagon" />
                     </figure>
                     <div class="card-body">
-                        <h2 class="card-title">Shoes!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <div class="card-actions justify-end">
-                            <button class="btn btn-primary">Buy Now</button>
+                        <h2 class="text-center">Pentagon</h2>
+                        <p class="text-center">Area (A) = 0.5 x p x b</p>
+                        <div class="flex gap-4 justify-center items-center">
+                            <input type="text" name="" id="pentagon-perimeter" placeholder="p"
+                                class="bg-slate-200 w-16 rounded-md p-1">
+                            <span>cm</span>
+                            <input type="text" name="" id="pentagon-apothem" placeholder="b"
+                                class="bg-slate-200 w-16 rounded-md p-1">
+                            <span>cm</span>
+                        </div>
+
+                        <div>
+                            <p>Area: <span id="pentagon-area"></span> <span>cm<sup>2</sup></span></p>
+                        </div>
+                        <div class="card-actions">
+                            <button onclick="calculatePentagonArea()"
+                                class="btn bg-[#1090D8] w-full mt-2 text-white">Calculate</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- ellipse card  -->
-                <div class="card bg-base-100  shadow-xl">
-                    <figure>
-                        <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                            alt="Shoes" />
+                <div class="card bg-base-100  shadow-xl p-2">
+                    <figure class="mt-14">
+                        <img src="images/ellipse.png" alt="Ellipse" />
                     </figure>
                     <div class="card-body">
-                        <h2 class="card-title">Shoes!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <div class="card-actions justify-end">
-                            <button class="btn btn-primary">Buy Now</button>
+                        <h2 class="text-center">Ellipse</h2>
+                        <p class="text-center">Area (A) = πab</p>
+                        <div class="flex gap-4 justify-center items-center">
+                            <input type="text" name="" id="ellipse-major-axes" placeholder="p"
+                                class="bg-slate-200 w-16 rounded-md p-1">
+                            <span>cm</span>
+                            <input type="text" name="" id="ellipse-minor-axes" placeholder="b"
+                                class="bg-slate-200 w-16 rounded-md p-1">
+                            <span>cm</span>
+                        </div>
+
+                        <div>
+                            <p>Area: <span id="ellipse-area"></span> <span>cm<sup>2</sup></span></p>
+                        </div>
+                        <div class="card-actions">
+                            <button onclick="calculateEllipseArea()"
+                                class="btn bg-[#1090D8] w-full mt-2 text-white">Calculate</button>
                         </div>
                     </div>
                 </div>
@@ -146,6 +182,9 @@
     </main>
     <script src="scripts/triangle-calculate.js"></script>
     <script src="scripts/rectangle-calculate.js"></script>
+    <script src="scripts/parallelogram-calculate.js"></script>
+    <script src="scripts/pentagon-calculate.js"></script>
+    <script src="scripts/ellips-calculate.js"></script>
 </body>
 
 </html>
